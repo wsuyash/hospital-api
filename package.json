@@ -1,0 +1,19 @@
+{
+  "name": "hospital-api-nodejs",
+  "version": "1.0.0",
+  "description": "Hospital API for doctors and patients",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon index.js"
+  },
+  "author": "Suyash Wagh",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.3",
+    "express-ejs-layouts": "^2.5.1",
+    "mongoose": "^6.2.3"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
