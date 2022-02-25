@@ -1,11 +1,11 @@
 const express = require('express');
 const router = express.Router();
 
-const doctorsController = require('../../../controllers/api/v1/doctors_controller');
+const doctorsApi = require('../../../controllers/api/v1/doctors_api');
 
-router.get('/', doctorsController.index);
+router.get('/', doctorsApi.index);
 
-router.post('/register', doctorsController.register);
-router.post('/login', doctorsController.login);
+router.post('/register', doctorsApi.register);
+router.post('/login', doctorsApi.login);
 
 module.exports = router;

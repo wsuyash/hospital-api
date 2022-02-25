@@ -1,9 +1,9 @@
 const express = require('express');
 const router = express.Router();
 
-const reportsController = require('../../../controllers/api/v1/reports_controller');
+const reportsApi = require('../../../controllers/api/v1/reports_api');
 
-router.get('/', reportsController.index);
-router.get('/:status', reportsController.getStatusReports);
+router.get('/', reportsApi.index);
+router.get('/:status', reportsApi.getStatusReports);
 
 module.exports = router;

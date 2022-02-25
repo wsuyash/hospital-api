@@ -16,7 +16,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // Routes
-app.use('/', require('./routes/api/v1'));
+app.use('/', require('./routes'));
 
 // Start server
 app.listen(PORT, () => {
