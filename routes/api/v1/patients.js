@@ -4,12 +4,12 @@ const passport = require('passport');
 const router = express.Router();
 
 // Import the patients controller
-const patientsApi = require('../../../controllers/api/v1/patients_api');
+const patientsController = require('../../../controllers/api/v1/patients_controller');
 
 // Routes
-router.post('/register', passport.authenticate('jwt', {session : false}),patientsApi.register);
-router.post('/:id/create_report', passport.authenticate('jwt', {session : false}), patientsApi.createReport);
-router.get('/:id/all_reports', passport.authenticate('jwt', {session : false}), patientsApi.getReports);
+router.post('/register', passport.authenticate('jwt', {session : false}),patientsController.register);
+router.post('/:id/create_report', passport.authenticate('jwt', {session : false}), patientsController.createReport);
+router.get('/:id/all_reports', passport.authenticate('jwt', {session : false}), patientsController.getReports);
 
 // Export the router
 module.exports = router;
