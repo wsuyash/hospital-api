@@ -2,7 +2,7 @@
 const mongoose = require('mongoose');
 
 // Connect to MongoDB Atlas
-mongoose.connect(process.env.MONGODB_URI);
+mongoose.connect(process.env.MONGODB_URI_LOCAL);
 
 // Get the connection
 const db = mongoose.connection;

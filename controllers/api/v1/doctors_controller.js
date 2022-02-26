@@ -9,6 +9,13 @@ module.exports.register = async (req, res) => {
 	// Get data from the request body
 	const { name, email, password, confirmPassword } = req.body;
 
+	// If password and confirmPassword do not match, return an error
+	if (password !== confirmPassword) {
+		return res.status(401).json({
+			message : 'Passwords do not match.'
+		});
+	}
+
 	try {
 		// Find the doctor by email
 		const doctor = await Doctor.findOne({ email });
@@ -17,13 +24,6 @@ module.exports.register = async (req, res) => {
 		if (doctor) {
 			return res.status(400).json({
 				message : 'Email already exists.'
-			});
-		}
-
-		// If password and confirmPassword do not match, return an error
-		if (password !== confirmPassword) {
-			return res.status(401).json({
-				message : 'Passwords do not match.'
 			});
 		}
 
