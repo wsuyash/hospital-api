@@ -1,12 +1,15 @@
+// Imports
 const passport = require('passport');
 const JwtStrategy = require('passport-jwt').Strategy;
 const ExtractJwt = require('passport-jwt').ExtractJwt;
 const Doctor = require('../models/Doctor');
 
+// Options for JWT Strategy
 let opts = {};
 opts.jwtFromRequest = ExtractJwt.fromAuthHeaderAsBearerToken();
 opts.secretOrKey = process.env.JWT_SECRET;
 
+// Create and use JWT Strategy
 passport.use(new JwtStrategy(opts, async (jwt_payload, done) => {
 	try {
 
@@ -23,4 +26,5 @@ passport.use(new JwtStrategy(opts, async (jwt_payload, done) => {
 	}
 }));
 
+// Export strategy
 module.exports = passport;
