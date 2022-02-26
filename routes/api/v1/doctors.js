@@ -3,8 +3,6 @@ const router = express.Router();
 
 const doctorsApi = require('../../../controllers/api/v1/doctors_api');
 
-router.get('/', doctorsApi.index);
-
 router.post('/register', doctorsApi.register);
 router.post('/login', doctorsApi.login);
 

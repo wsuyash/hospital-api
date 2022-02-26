@@ -1,6 +1,8 @@
 // Imports
 require('dotenv').config();
 const express = require('express');
+const passport = require('passport');
+const passportJwt = require('./config/passport-jwt-strategy');
 const db = require('./config/mongoose');
 
 // Port
@@ -14,6 +16,9 @@ const app = express();
 app.use(express.json());
 // parse application/x-www-form-urlencoded
 app.use(express.urlencoded({ extended: true }));
+
+// Passport
+app.use(passport.initialize());
 
 // Routes
 app.use('/', require('./routes'));

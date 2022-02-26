@@ -1,11 +1,26 @@
-module.exports.index = (req, res) => {
-	return res.status(200).json({
-		message: 'This is reports home page.'
-	});
-}
+const Report = require('../../../models/Report');
 
-module.exports.getStatusReports = (req, res) => {
-	return res.status(200).json({
-		message: 'This is get reports with a status page.'
-	});
+module.exports.getStatusReports = async (req, res) => {
+
+	const status = req.params.status;
+
+	try {
+		const reports = await Report.find({status : status});
+
+		if (!reports) {
+			return res.status(404).json({
+				message : 'No reports found'
+			});
+		}
+
+		return res.status(200).json({
+			success : true,
+			data : reports
+		});		
+	} catch (error) {
+		res.status(500).json({
+			message : 'Something went wrong',
+			error : error.message
+		});	
+	}
 }
