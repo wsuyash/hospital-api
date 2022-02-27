@@ -7,12 +7,12 @@ A hostpital API for doctors to register and login and create reports for patient
 3. MongoDB
 
 ## Run This Project Locally
-### Setup
 #### Prerequisites
 1. Install node and npm.
 2. Install MongoDB and optionally, a frontend like MongoDB Compass or Robo3T.
 3. Install Postman or any other API platform.
 
+### Setup
 #### Clone this repo and change into the directory:
 ```
 git clone https://github.com/wsuyash/hospital-api.git
