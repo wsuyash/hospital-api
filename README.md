@@ -30,7 +30,6 @@ npm start
 ```
 
 #### The server should be up and running on port 3000.
-<br>
 
 #### Connect to the database at: 
 ```
