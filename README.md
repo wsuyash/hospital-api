@@ -4,7 +4,8 @@ A hostpital API for doctors to register and login and create reports for patient
 ## Tech Stack
 1. Node.js
 2. Express.js
-3. MongoDB
+3. EJS
+4. MongoDB
 
 ## Run This Project Locally
 #### Prerequisites
