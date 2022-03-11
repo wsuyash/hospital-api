@@ -1,5 +1,5 @@
 # Hospital API
-A hostpital API for doctors to register and login and create reports for patients.
+A hostpital API for doctors to register and login and create reports for patients related to COVID.
 
 ## Tech Stack
 1. Node.js
